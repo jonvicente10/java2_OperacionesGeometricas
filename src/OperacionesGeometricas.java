@@ -62,7 +62,7 @@ public class OperacionesGeometricas {
 				area = rectangulo1.area();
 				perimetro = rectangulo1.perimetro();
 				/* Muestra los resultados en pantalla */
-				System.out.println("\nEl area del rectangulo es:" + area + "m");
+				System.out.println("\nEl area del rectangulo es:" + area + "m²");
 				System.out.println("\nEl perimetro del rectangulo es:" + perimetro + "m");
 			}
 
