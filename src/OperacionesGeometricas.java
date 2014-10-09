@@ -1,4 +1,3 @@
-package java2_operacionesgeometricas.src;
 import lib.com.zubiri.geometria.Circulo;
 import lib.com.zubiri.geometria.Rectangulo;
 import java.util.Scanner;
