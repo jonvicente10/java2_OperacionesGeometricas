@@ -22,10 +22,10 @@ public class OperacionesGeometricas {
 
 		/* Se crea un while para hacer un bucle y para que el programa no termine hasta que esto se solicite */
 		
-		while (seleccion != 'S')
+		while ((seleccion != 'S') && (seleccion != 's'))
 		{
 
-			/* Se crea una condicion. Dependiendo del valor de objetogeometrico, el programa hara una cosa u otra */
+			/* Se crea una condicion. Dependiendo del valor de seleccion, el programa hara una cosa u otra */
 		
 				/* Si el objeto es un circulo el programa hara esto: */
 				if (seleccion == 'C' || seleccion == 'c')
@@ -70,7 +70,7 @@ public class OperacionesGeometricas {
 					seleccion = sc.next().charAt(0);
 				}
 
-				/* Si el valor introducido no coincide con "rectangulo" o "circulo", nos dara un aviso: */
+				/* Si el valor introducido no coincide con "R/r", "C/c" o "S/s, nos dara un aviso: */
 				else
 				{
 					System.out.println("Introduce un valor valido!");
