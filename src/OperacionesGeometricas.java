@@ -9,62 +9,77 @@ public class OperacionesGeometricas {
 
 	public static void main (String args[]) {
 
-		/* Se declara la variable objetogeometrico; que recojera si el objeto es un circulo o un rectangulo */
-		String objetogeometrico, circulo, rectangulo;
+		/* Se declara la variable seleccion; que recojera la opcion que introduzca el usuario por teclado */
+		char seleccion;
 	
 		/* Se utiliza la clase Scanner para solicitar valores de entrada */
 		Scanner sc = new Scanner(System.in);
 
-		/* Se solicita el tipo de objeto geometrico */
-		System.out.print("\nIntroduce el objeto geometrico (circulo o rectangulo): ");
+		/* Se solicita que seleccione una opcion */
+		System.out.print("\nQue operacion desea realizar [(C)irculo, (R)ectangulo o (S)alir]: ");
 
-		objetogeometrico = sc.nextLine();
+		seleccion = sc.next().charAt(0);
 
-		/* Se crea una condicion. Dependiendo del valor de objetogeometrico, el programa hara una cosa u otra */
+		/* Se crea un while para hacer un bucle y para que el programa no termine hasta que esto se solicite */
 		
-			/* Si el objeto es un circulo el programa hara esto: */
-			if (objetogeometrico.equalsIgnoreCase("circulo"))
-			{
-				double radiointroducido, area, circunferencia;
-				/* Pide introducir el valor del radio */
-				System.out.println("\nHas seleccionado circulo, introduce el valor del radio (en metros):");
-				radiointroducido = sc.nextDouble();
-				/* Se crea un nuevo objeto circulo1 */
-				Circulo circulo1 = new Circulo(radiointroducido);
-				/* Se recupera el valor del area y circunferencia */
-				area = circulo1.area();
-				circunferencia = circulo1.circunferencia();
-				/* Muestra los resultados en pantalla */
-				System.out.println("\nEl area del circulo es:" + area + "m²");
-				System.out.println("\nLa circunferencia del circulo es:" + circunferencia + "m");
+		while (seleccion != 'S')
+		{
+
+			/* Se crea una condicion. Dependiendo del valor de objetogeometrico, el programa hara una cosa u otra */
+		
+				/* Si el objeto es un circulo el programa hara esto: */
+				if (seleccion == 'C' || seleccion == 'c')
+				{
+					double radiointroducido, area, circunferencia;
+					/* Pide introducir el valor del radio */
+					System.out.println("\nHas seleccionado circulo, introduce el valor del radio (en metros):");
+					radiointroducido = sc.nextDouble();
+					/* Se crea un nuevo objeto circulo1 */
+					Circulo circulo1 = new Circulo(radiointroducido);
+					/* Se recupera el valor del area y circunferencia */
+					area = circulo1.area();
+					circunferencia = circulo1.circunferencia();
+					/* Muestra los resultados en pantalla */
+					System.out.println("\nEl area del circulo es:" + area + "m²");
+					System.out.println("\nLa circunferencia del circulo es:" + circunferencia + "m");
 			
-			}
+					System.out.print("\nQue operacion desea realizar [(C)irculo, (R)ectangulo o (S)alir]: ");
+					seleccion = sc.next().charAt(0);
+				}
 
-			/* Si el objeto es un rectangulo el programa hara esto: */
-			else if (objetogeometrico.equalsIgnoreCase("rectangulo"))
-			{
-				double baseintroducida, altointroducido, area, perimetro;
-				/* Pide introducir el valor del alto y la base */
-				System.out.println("\nHas seleccionado rectangulo, introduce el valor de la base y del alto");
-				System.out.println("\nValor de la base (en metros):");
-				baseintroducida = sc.nextDouble();
-				System.out.println("\nValor del alto (en metros):");
-				altointroducido = sc.nextDouble();
-				/* Se crea un nuevo objeto rectangulo1 */
-				Rectangulo rectangulo1 = new Rectangulo(baseintroducida, altointroducido);
-				/* Se recupera el valor del area y perimetro */
-				area = rectangulo1.area();
-				perimetro = rectangulo1.perimetro();
-				/* Muestra los resultados en pantalla */
-				System.out.println("\nEl area del rectangulo es:" + area + "m²");
-				System.out.println("\nEl perimetro del rectangulo es:" + perimetro + "m");
-			}
+				/* Si el objeto es un rectangulo el programa hara esto: */
+				else if (seleccion == 'R' || seleccion == 'r')
+				{
+					double baseintroducida, altointroducido, area, perimetro;
+					/* Pide introducir el valor del alto y la base */
+					System.out.println("\nHas seleccionado rectangulo, introduce el valor de la base y del alto");
+					System.out.println("\nValor de la base (en metros):");
+					baseintroducida = sc.nextDouble();
+					System.out.println("\nValor del alto (en metros):");
+					altointroducido = sc.nextDouble();
+					/* Se crea un nuevo objeto rectangulo1 */
+					Rectangulo rectangulo1 = new Rectangulo(baseintroducida, altointroducido);
+					/* Se recupera el valor del area y perimetro */
+					area = rectangulo1.area();
+					perimetro = rectangulo1.perimetro();
+					/* Muestra los resultados en pantalla */
+					System.out.println("\nEl area del rectangulo es:" + area + "m²");
+					System.out.println("\nEl perimetro del rectangulo es:" + perimetro + "m");
+				
+					System.out.print("\nQue operacion desea realizar [(C)irculo, (R)ectangulo o (S)alir]: ");
+					seleccion = sc.next().charAt(0);
+				}
 
-			/* Si el valor introducido no coincide con "rectangulo" o "circulo", nos dara un aviso: */
-			else
-			{
-				System.out.println("Introduce un valor valido!");
-			}
+				/* Si el valor introducido no coincide con "rectangulo" o "circulo", nos dara un aviso: */
+				else
+				{
+					System.out.println("Introduce un valor valido!");
+
+					System.out.print("\nQue operacion desea realizar [(C)irculo, (R)ectangulo o (S)alir]: ");
+					seleccion = sc.next().charAt(0);
+				}
+
+		}
 
 	}
 
